@@ -47,4 +47,3 @@ echo "ENVIRONMENT=development" >> $APP_DIR/.env
 # migrations are idempotent, so run on startup
 cd $APP_DIR && php index.php migrate
 
-which apache2-foreground && exec "apache2-foreground" || exit 0

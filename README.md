@@ -51,12 +51,15 @@ Prerequisites:
 
 * [Docker Engine](https://docs.docker.com/install/) v18+
 * [Docker Compose](https://docs.docker.com/compose/install/) v1.24+
+* [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads) v6.47.2+
+  * [cflocal CLI plugin](https://github.com/cloudfoundry-incubator/cflocal) (run `cf install-plugin cflocal`)
 
 ### Setup
 
-Install dependencies
+Create Docker image using a buildpack (note this caches resources the first time)
 
-    bin/composer install --no-dev
+    cf local stage project-open-data-dashboard_app
+    cf local export project-open-data-dashboard_app -r project-open-data-dashboard_app:latest
 
 Start up docker containers.
 
