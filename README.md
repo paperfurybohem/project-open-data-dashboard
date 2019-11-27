@@ -58,12 +58,13 @@ Prerequisites:
 
 Create Docker image using a buildpack (note this caches resources the first time)
 
-    cf local stage project-open-data-dashboard_app
-    cf local export project-open-data-dashboard_app -r project-open-data-dashboard_app:latest
+    cf local stage pod-dashboard
+    cf local export pod-dashboard -r project-open-data-dashboard_app:latest
 
 Start up docker containers.
 
     docker-compose up
+    cf local run pod-dashboard
 
 Test with bats (and run the migrations):
 
